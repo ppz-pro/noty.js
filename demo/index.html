@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>@ppz/noty.js</title>
+    <link rel="stylesheet" type="text/css" href="./simple/index.css">
+  </head>
+  <body>
+    <button id="info">info</button>
+    <button id="success">success</button>
+    <button id="warn">warn</button>
+    <button id="error">error</button>
+    &nbsp;
+    <button id="fast">消失得快</button>
+
+    <script type="module">
+      import Noty from './simple/index.js'
+
+      el('info').onclick = function() {
+        Noty.info('普通的通知')
+      }
+      el('success').onclick = function() {
+        Noty.success('成了~')
+      }
+      el('warn').onclick = function() {
+        Noty.warn('警告！')
+      }
+      el('error').onclick = function() {
+        Noty.error('错误！')
+      }
+
+      el('fast').onclick = function() {
+        Noty.duration = 500
+        Noty.info('我消失得很快')
+      }
+
+      function el(id) {
+        return document.getElementById(id)
+      }
+    </script>
+  </body>
+</html>

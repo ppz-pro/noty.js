@@ -1,0 +1,23 @@
+.ppz-noty-root {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.ppz-noty-root div {
+  min-width: 100px;
+  line-height: 1;
+  padding: 1em 1.2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .08);
+  margin-top: .6em;
+}
+
+.ppz-noty-root .success {
+  background: rgba(0, 255, 0, .7);
+}
+.ppz-noty-root .warn {
+  background: rgba(255, 255, 0, .7);
+}
+.ppz-noty-root .error {
+  background: rgba(255, 0, 0, .7);
+}
