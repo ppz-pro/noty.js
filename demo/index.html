@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>@ppz/noty.js</title>
-    <link rel="stylesheet" type="text/css" href="./simple/index.css">
   </head>
   <body>
     <button id="info">info</button>
@@ -13,7 +12,7 @@
     <button id="fast">消失得快</button>
 
     <script type="module">
-      import Noty from './simple/index.js'
+      import Noty from '../index.js'
 
       el('info').onclick = function() {
         Noty.info('普通的通知')
@@ -29,7 +28,7 @@
       }
 
       el('fast').onclick = function() {
-        Noty.duration = 500
+        Noty.duration = 1000
         Noty.info('我消失得很快')
       }
 

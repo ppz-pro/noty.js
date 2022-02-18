@@ -1,6 +1,7 @@
-export default
+export
 function NotyFactory({
   rootClass = '',
+  customPosition,
   mount = document.querySelector('body'),
   Content,
   Animation,
@@ -9,6 +10,11 @@ function NotyFactory({
   const disposableDur = Disposable()
   const root = document.createElement('div')
   root.className = 'ppz-noty-root ' + rootClass
+  if(!customPosition) {
+    root.style.position = 'fixed'
+    root.style.right = '1em'
+    root.style.top = '1em'
+  }
   mount.append(root)
 
   return new Proxy(Content, {
@@ -30,10 +36,18 @@ function NotyFactory({
   })
 }
 
-function Disposable(value) {
+function Disposable(value) { // 一次性的值
   return function(newValue) {
     const tmp = value
     value = newValue
     return tmp
   }
 }
+
+import Animation from './animation/ccz.js'
+import Content from './content/jj.js'
+
+export default NotyFactory({
+  Animation,
+  Content
+})
