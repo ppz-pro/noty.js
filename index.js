@@ -1,4 +1,9 @@
-import { Disposable } from './utils.js'
+import Animation from './animation/1.js'
+import Content from './content/1.js'
+
+export default NotyFactory({
+  Animation, Content
+})
 
 export
 function NotyFactory({
@@ -9,7 +14,6 @@ function NotyFactory({
   Animation,
   duration = 3000
 }) {
-  const disposableDur = Disposable()
   const root = document.createElement('div')
   root.className = 'ppz-noty-root ' + rootClass
   if(!customPosition) {
@@ -20,32 +24,25 @@ function NotyFactory({
   mount.append(root)
 
   return new Proxy(Content, {
-    get(target, method, receiver) {
+    get(target, method) {
       return function() {
-        const content = Content[method](...arguments)
-        Animation.show(content, root)
-        
-        let dur = disposableDur()
-        if(dur == undefined)
-          dur = duration
-        if(dur != 0)
-          setTimeout(() => {
+        let closed = false
+        const instance = {
+          root,
+          duration, // 传到“目标方法”里，便于设置 duration（show 之前设置有效，之后无效）
+          closed: () => closed, // 防止外部修改
+          close() {
+            if(closed) throw Error('通知已经关闭')
+            closed = true
             Animation.close(content, root)
-          }, dur)
+          }
+        }
+        var content = instance.content = Content[method].apply(instance, arguments)
+        Animation.show(content, root)
+        if(instance.duration != 0)
+          instance.timeoutID = setTimeout(instance.close, instance.duration)
+        return instance
       }
-    },
-    set(target, propKey, value) {
-      if(propKey == 'duration')
-        disposableDur(value)
-      return true
     }
   })
 }
-
-import Animation from './animation/1.js'
-import Content from './content/1.js'
-
-export default NotyFactory({
-  Animation,
-  Content
-})
