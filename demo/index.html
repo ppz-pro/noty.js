@@ -2,20 +2,23 @@
 <html>
   <head>
     <title>@ppz/noty.js</title>
+    <link rel="stylesheet" type="text/css" href="../content/1.css">
   </head>
   <body>
-    <button id="info">info</button>
-    <button id="success">success</button>
-    <button id="warn">warn</button>
-    <button id="error">error</button>
+    <button id="info">普通</button>
+    <button id="success">成功</button>
+    <button id="warn">警告</button>
+    <button id="error">错误</button>
+    <button id="loading">加载中</button>
     &nbsp;
     <button id="fast">消失得快</button>
+    <button id="hold">不消失</button>
 
     <script type="module">
       import Noty from '../index.js'
 
       el('info').onclick = function() {
-        Noty.info('普通的通知')
+        Noty.info('普通消息')
       }
       el('success').onclick = function() {
         Noty.success('成了~')
@@ -26,10 +29,17 @@
       el('error').onclick = function() {
         Noty.error('错误！')
       }
+      el('loading').onclick = function() {
+        Noty.loading('加载中...')
+      }
 
       el('fast').onclick = function() {
         Noty.duration = 1000
         Noty.info('我消失得很快')
+      }
+      el('hold').onclick = function() {
+        Noty.duration = 0
+        Noty.info('不消失')
       }
 
       function el(id) {

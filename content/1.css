@@ -1,0 +1,38 @@
+@import 'common.css';
+
+.ppz-noty-item1 {
+  line-height: 1;
+  min-width: 10em;
+  box-shadow: var(--ppz-noty-box-shadow);
+  padding: .8em 1em;
+  margin-bottom: 1em;
+  
+  display: flex;
+  align-items: center;
+}
+
+.ppz-noty-item1 .ppz-noty-icon {
+  box-sizing: content-box;
+  width: 1em;
+  text-align: center;
+  padding: .36em;
+  margin-right: 1em;
+  color: white;
+  border-radius: 50%;
+}
+.ppz-noty-item1 .ppz-noty-icon-info {
+  background-color: #2db7f5;
+}
+.ppz-noty-item1 .ppz-noty-icon-success {
+  background-color: #19be6b;
+}
+.ppz-noty-item1 .ppz-noty-icon-warn {
+  background-color: #ff9900;
+}
+.ppz-noty-item1 .ppz-noty-icon-error {
+  background-color: #ed4014;
+}
+.ppz-noty-item1 .ppz-noty-icon-loading {
+  background-color: #2db7f5;
+  animation: 1s ppz-noty-spin infinite linear;
+}

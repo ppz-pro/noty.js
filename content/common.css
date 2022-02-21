@@ -1,0 +1,43 @@
+:root {
+  --ppz-noty-box-shadow: 0 0 .3em rgba(0,0,0,.1);
+}
+
+@keyframes ppz-noty-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@font-face {
+  font-family: "ppz-noty-iconfont";
+  src: url('iconfont.woff2?t=1645425478574') format('woff2'),
+       url('iconfont.woff?t=1645425478574') format('woff'),
+       url('iconfont.ttf?t=1645425478574') format('truetype');
+}
+
+.ppz-noty-icon {
+  font-family: "ppz-noty-iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ppz-noty-icon-loading:before {
+  content: "\e601";
+}
+
+.ppz-noty-icon-warn:before {
+  content: "\e61e";
+}
+
+.ppz-noty-icon-info:before {
+  content: "\e843";
+}
+
+.ppz-noty-icon-error:before {
+  content: "\e651";
+}
+
+.ppz-noty-icon-success:before {
+  content: "\e6b6";
+}

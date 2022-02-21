@@ -1,3 +1,5 @@
+import { Disposable } from './utils.js'
+
 export
 function NotyFactory({
   rootClass = '',
@@ -23,9 +25,13 @@ function NotyFactory({
         const content = Content[method](...arguments)
         Animation.show(content, root)
         
-        setTimeout(() => {
-          Animation.close(content, root)
-        }, disposableDur() ?? duration)
+        let dur = disposableDur()
+        if(dur == undefined)
+          dur = duration
+        if(dur != 0)
+          setTimeout(() => {
+            Animation.close(content, root)
+          }, dur)
       }
     },
     set(target, propKey, value) {
@@ -36,16 +42,8 @@ function NotyFactory({
   })
 }
 
-function Disposable(value) { // 一次性的值
-  return function(newValue) {
-    const tmp = value
-    value = newValue
-    return tmp
-  }
-}
-
-import Animation from './animation/ccz.js'
-import Content from './content/jj.js'
+import Animation from './animation/1.js'
+import Content from './content/1.js'
 
 export default NotyFactory({
   Animation,
