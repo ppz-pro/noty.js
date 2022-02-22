@@ -33,6 +33,7 @@ function NotyFactory({
           closed: () => closed, // 防止外部修改
           close() {
             if(closed) throw Error('通知已经关闭')
+            if(instance.onClose) instance.onClose()
             closed = true
             Animation.close(content, root)
           }

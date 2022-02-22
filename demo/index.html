@@ -34,12 +34,18 @@
       }
 
       el('fast').onclick = function() {
-        // TODO
-        Noty.info('我消失得很快')
+        Noty.info('我消失得很快', {
+          duration: 1000,
+          onClose() {
+            console.log('我消失得快吧')
+          }
+        })
       }
       el('hold').onclick = function() {
-        Noty.duration = 0
-        Noty.info('不消失')
+        const noty = Noty.info('不消失', {
+          duration: 0,
+          closeBtn: true
+        })
       }
 
       function el(id) {

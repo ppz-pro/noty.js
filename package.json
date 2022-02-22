@@ -1,7 +1,7 @@
 {
-  "name": "noty.js",
+  "name": "@ppzp/noty",
   "version": "0.0.0",
-  "description": "简洁的通知工厂",
+  "description": "简洁、可定制的通知",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
