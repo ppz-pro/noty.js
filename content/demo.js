@@ -1,9 +1,9 @@
-import { escapeHtml } from '../utils.js'
+import { escapeHTML } from '../utils.js'
 
 export default {
   success(text) {
     const div = document.createElement('div')
-    div.innerHTML = 'success: ' + escapeHtml(text)
+    div.innerHTML = 'success: ' + escapeHTML(text)
     return div
   },
   error(text) {

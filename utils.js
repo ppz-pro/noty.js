@@ -1,5 +1,5 @@
 export
-function escapeHtml(target) {
+function escapeHTML(target) {
   return target.replace(/[&<>'"]/g, sub => ({
     '&': '&amp;',
     '<': '&lt;',

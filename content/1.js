@@ -1,5 +1,5 @@
 // 想用这个 content 的样式，只引用 css 就可以了
-import { escapeHtml } from '../utils.js'
+import { escapeHTML } from '../utils.js'
 
 export default {
   info: createShow('info'),
@@ -21,14 +21,14 @@ function createShow(className, defaults) {
     
     const div = Div('', // content 部分再包一层，避免之上的样式影响动画效果
       `<div class='ppz-noty-item1 ppz-noty-item1-${className}'>
-        <i class = 'ppz-noty-icon ppz-noty-icon-${className}'></i>
-        <span>${escapeHtml(text)}</span>
+        <i class='ppz-noty-icon ppz-noty-icon-${className}'></i>
+        <span class='text'>${escapeHTML(text)}</span>
       </div>`
     )
     if(options.closeBtn) {
       const btn = Div('close-btn', 'x')
       btn.onclick = this.close
-      div.querySelector('.ppz-noty-item1').append(btn)
+      div.querySelector('.ppz-noty-item1').prepend(btn)
     }
     return div
   }

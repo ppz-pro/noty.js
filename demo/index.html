@@ -2,55 +2,97 @@
 <html>
   <head>
     <title>@ppz/noty.js</title>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"> -->
+    <link href="https://unpkg.com/prismjs@1.27.0/themes/prism-okaidia.css" rel="stylesheet">
+    <script src="https://unpkg.com/prismjs@1.27.0/prism.js"></script>
     <link rel="stylesheet" type="text/css" href="../content/1.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
   </head>
   <body>
-    <button id="info">普通</button>
-    <button id="success">成功</button>
-    <button id="warn">警告</button>
-    <button id="error">错误</button>
-    <button id="loading">加载中</button>
-    &nbsp;
-    <button id="fast">消失得快</button>
-    <button id="hold">不消失</button>
+    <main class="container">
+      <h1>@ppzp/noty</h1>
+      <p>浏览器里的通知组件：</p>
+      <ul>
+        <li>简洁</li>
+        <li>开箱即用</li>
+        <li>可定制</li>
+      </ul>
 
-    <script type="module">
-      import Noty from '../index.js'
+      <section>
+        <h2>安装</h2>
+        <pre><code class="language-shell">$ npm install @ppzp/noty</code></pre>
+      </section>
+      
+      <section>
+        <h2>使用</h2>
+        <pre><code class="language-js">import noty from '@ppzp/noty' // 引入默认配置（动画、内容）的通知
+import '@ppzp/noty/content/1.css' // 引入默认样式</code></pre>
+      </section>
+      
+      <section>
+        <h2>案例</h2>
 
-      el('info').onclick = function() {
-        Noty.info('普通消息')
-      }
-      el('success').onclick = function() {
-        Noty.success('成了~')
-      }
-      el('warn').onclick = function() {
-        Noty.warn('警告！')
-      }
-      el('error').onclick = function() {
-        Noty.error('错误！')
-      }
-      el('loading').onclick = function() {
-        Noty.loading('加载中...')
-      }
+        <section class="basic">
+          <h3>基础</h3>
+          <button class="info">普通</button>
+          <button class="success">成功</button>
+          <button class="warn">警告</button>
+          <button class="error">错误</button>
+          <button class="loading">加载中</button>
 
-      el('fast').onclick = function() {
-        Noty.info('我消失得很快', {
-          duration: 1000,
-          onClose() {
-            console.log('我消失得快吧')
-          }
-        })
-      }
-      el('hold').onclick = function() {
-        const noty = Noty.info('不消失', {
-          duration: 0,
-          closeBtn: true
-        })
-      }
+          <pre><code class="language-js">noty.info('一条普通通知')
+noty.success('成了~')
+noty.warn('警告！')
+noty.error('出错了')
+noty.loading('加载中...') // 默认情况下不会自动关闭</code></pre>
+        </section>
+  
+        <section class="duration">
+          <h3>设置停留时间</h3>
+          <button>1 秒</button>
+          <pre><code class="language-js">noty.info('停留 1 秒', {
+  duration: 1000
+})</code></pre>
+        </section>
 
-      function el(id) {
-        return document.getElementById(id)
-      }
-    </script>
+        <section class="hold">
+          <h3>常驻</h3>
+          <button>常驻</button>
+          <pre><code class="language-js">noty.info('我将永存', {
+  duration: 0
+})</code></pre>
+        </section>
+
+        <section class="closable">
+          <h3>关闭按钮</h3>
+          <button>可关闭的</button>
+          <pre><code class="language-js">noty.info('注意右上', {
+  closeBtn: true
+})</code></pre>
+        </section>
+
+        <section class="closable">
+          <h3>实践一 异常提示</h3>
+          <p>发生异常时，为了不使用户忽略通知，应使通知常驻，并提供关闭按钮，让用户手动关闭通知。</p>
+          <pre><code class="language-js">noty.error('出错了', {
+  duration: 0,
+  closeBtn: true
+})</code></pre>
+        </section>
+
+        <section class="closable">
+          <h3>实践二 数据加载</h3>
+          <p>数据加载前应通知用户，进入“等待期”；数据加载完成后，再关闭通知，同时提示“加载成功”。</p>
+          <pre><code class="language-js">const notyItem = noty.loading('数据加载中') // 加载数据前，显示通知
+ajax.get('/xxx').then(function(res) {
+  // 处理数据...
+  notyItem.close() // 数据加载完成后，关闭通知
+  noty.success('数据加载成功')
+})</code></pre>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="index.js"></script>
   </body>
 </html>

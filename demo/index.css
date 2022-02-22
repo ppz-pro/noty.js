@@ -1,0 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}
+* {
+  box-sizing: border-box;
+}
+main {
+  background-color: #fff;
+  padding: 2em;
+  width: 1000px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: 1rem;
+}

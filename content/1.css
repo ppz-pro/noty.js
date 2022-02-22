@@ -2,14 +2,19 @@
 
 .ppz-noty-item1 {
   line-height: 1;
-  min-width: 10em;
+  width: 12em;
   box-shadow: var(--ppz-noty-box-shadow);
   padding: .8em 1em;
   margin-bottom: 1em;
   position: relative;
+  background-color: rgba(255, 255, 255, .5);
   
   display: flex;
   align-items: center;
+}
+
+.ppz-noty-item1 .text {
+  line-height: 1.5;
 }
 
 .ppz-noty-item1 .ppz-noty-icon {
@@ -45,6 +50,7 @@
   padding: .38em .5em;
 
   font-size: .8em;
+  box-sizing: content-box;
   width: 1em;
   text-align: center;
   
