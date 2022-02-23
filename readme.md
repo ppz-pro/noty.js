@@ -4,9 +4,10 @@
 简洁、可定制的通知组件
 
 ### 链接
-+ [使用文档](https://ppz-pro.github.io/noty.js/demo/)
++ [使用文档](https://ppz-pro.github.io/noty.js/docs/)
 + [api]()
 + [问题 & 反馈](https://github.com/ppz-pro/noty.js/issues)
++ [github](https://github.com/ppz-pro/noty.js)
 
 # TODO
 + 文档：自定义
