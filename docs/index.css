@@ -6,6 +6,12 @@ html, body {
 * {
   box-sizing: border-box;
 }
+
+p {
+  line-height: 1.66em;
+  margin: .4em 0;
+}
+
 main {
   background-color: #fff;
   padding: 1em 3em 2em;
@@ -13,6 +19,7 @@ main {
   min-height: 100vh;
   margin: 0 auto;
 }
+
 header {
   display: flex;
   align-items: center;
