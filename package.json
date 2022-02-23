@@ -1,6 +1,6 @@
 {
   "name": "@ppzp/noty",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "简洁、可定制的通知",
   "main": "index.js",
   "scripts": {

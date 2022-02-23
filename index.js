@@ -1,12 +1,12 @@
-import Animation from './animation/1.js'
-import Content from './content/1.js'
+import Animation from './animation/index.js'
+import Content from './content/index.js'
 
-export default NotyFactory({
+export default Noty({
   Animation, Content
 })
 
 export
-function NotyFactory({
+function Noty({
   rootClass = '',
   customPosition,
   mount = document.querySelector('body'),
