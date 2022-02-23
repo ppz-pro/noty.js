@@ -1,3 +1,4 @@
+# @ppzp/noty
 [![license](https://img.shields.io/github/license/ppz-pro/noty.js)](https://github.com/ppz-pro/noty.js/blob/main/LICENSE)
 [![release](https://img.shields.io/github/release/ppz-pro/noty.js)](https://github.com/ppz-pro/noty.js/releases)
 
@@ -12,7 +13,3 @@
 + [api]()
 + [问题 & 反馈](https://github.com/ppz-pro/noty.js/issues)
 + [github](https://github.com/ppz-pro/noty.js)
-
-# TODO
-+ 文档：自定义
-+ hover 时，不消失

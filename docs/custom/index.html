@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>@ppz/noty 定制</title>
+  </head>
+  <body>
+    <button id="abc">abc</button>
+    <button id="success">成功</button>
+    <button id="error">错误</button>
+
+    <script type="module">
+      import Noty from '../../noty.js'
+      import Animation from './animation.js'
+      import Content from './Content.js'
+
+      const noty = Noty({
+        duration: 10000,
+        Animation,
+        Content,
+      })
+
+      el('abc').onclick = function() {
+        noty.abc('不规范的方法名')
+      }
+      el('success').onclick = function() {
+        noty.success('成了~')
+      }
+      el('error').onclick = function() {
+        noty.error('出错了')
+      }
+
+      function el(id) {
+        return document.getElementById(id)
+      }
+    </script>
+  </body>
+</html>

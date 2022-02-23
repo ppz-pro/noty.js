@@ -11,6 +11,12 @@ p {
   line-height: 1.66em;
   margin: .4em 0;
 }
+ul {
+  margin: .2em 0;
+}
+li {
+  line-height: 1.66em;
+}
 
 main {
   background-color: #fff;
