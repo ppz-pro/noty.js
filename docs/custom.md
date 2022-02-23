@@ -1,9 +1,12 @@
 # noty.js API
 @ppzp/noty 的核心代码只有 40 行左右，了解它最直接的方式就是看一眼[这 40 行代码](https://github.com/ppz-pro/noty.js/blob/main/noty.js)。当然，也可以看下文的介绍。
 
-![结构图](https://raw.githubusercontent.com/ppz-pro/noty.js/main/docs/noty.js.png)
+结构：
+<p align="center"><img alt="结构图" src="./noty.js.png" /></p>
 
 ## Noty
+Noty 是一个构造函数  
+例子：
 ``` js
 import Noty from '@ppzp/noty/noty.js'
 
@@ -19,6 +22,8 @@ const noty = Noty({
 // noty.info('...')
 // noty.success('...')
 ```
+
+参数如下：
 #### rootClass
 所有通知，都被添加到同一个根元素里  
 通过 rootClass，可以设置根元素的 class，进而通过 css 控制根元素的样式  
@@ -77,7 +82,7 @@ export default {
 后面的通知，出现在前面通知的下面（文档流中）  
 通过 ```HTMLElement.prototype.remove``` 将通知元素从根元素移除
 
-也可以像 noty.js 提供的[默认 Animation](https://github.com/ppz-pro/noty.js/blob/main/animation/index.js)，使用 flip 模式，让出入场较为丝滑
+也可以像 noty.js 提供的[默认 Animation](https://github.com/ppz-pro/noty.js/blob/main/animation/index.js)，利用 flip 模式，让出入场较为丝滑
 
 ## Content
 最简实践：
@@ -136,7 +141,7 @@ const noty = Noty({
 noty.success('操作成功', '数据已提交到主服务器')
 ```
 
-另外，```success``` 方法里的 this（在不使用箭头函数的情况下）上，有几个有用的属性和方法：
+另外，```success``` 方法里的 this上，有几个有用的属性和方法（在不使用箭头函数的情况下）：
 #### this.root
 根元素
 
@@ -152,13 +157,16 @@ const noty = Noty({
     // error(...) { ... }
   }
 })
+
+noty.success('操作成功', '数据已提交到主服务器', 5000)
 ```
 
 #### this.closed()
-可以通过 ```this.closed()``` 获取“通知是否已关闭”
+可以通过 ```this.closed()``` 获知“通知是否已关闭”
 
 #### this.close()
-可以通过 ```this.close()``` 来关闭通知，比如：
+可以通过 ```this.close()``` 来关闭通知  
+常用于“关闭按钮”，比如：
 ``` js
 const noty = Noty({
   Content: {
@@ -168,6 +176,7 @@ const noty = Noty({
         <div>${text}</div>
         <div class="close-btn">x</div>
       `
+      // 注意，下面是箭头函数，保留 this
       el.querySelector('.close-btn').onclick = () => {
         this.close()
       }
@@ -180,7 +189,7 @@ const noty = Noty({
 
 #### this.onClose()
 可以通过 ```this.onClose = function() { ... }``` 的方式，添加关闭时的回调函数  
-> 注意：```onClose``` 将在 close 被调用时，立即执行。但此时可能由于动画效果还未结束，而导致 content 元素停留在文档流。
+> 注意：```onClose``` 将在 this.close 被调用时，立即执行。但此时可能由于动画效果还未结束，而导致 content 元素停留在文档流。
 
 ## NotyItem
 ```NotyItem``` 即上文 ```Content``` 部分提到的 ```this```  
@@ -194,3 +203,5 @@ ajax.get('/xxx').then(function(res) {
   noty.success('数据加载成功')
 })
 ```
+
+[最简实践](https://ppz-pro.github.io/noty.js/docs/custom/)

@@ -9,7 +9,10 @@
 
 ### 链接
 + [使用文档](https://ppz-pro.github.io/noty.js/docs/)
-+ [自定义](https://ppz-pro.github.io/noty.js/docs/custom/)
-+ [api]()
++ [API & 自定义](https://github.com/ppz-pro/noty.js/blob/main/docs/custom.md)
 + [问题 & 反馈](https://github.com/ppz-pro/noty.js/issues)
 + [github](https://github.com/ppz-pro/noty.js)
+
+### LICENSE
+The author disclaims copyright to this source code.  
+[The Unlicense](https://unlicense.org/)
