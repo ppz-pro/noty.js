@@ -8,10 +8,15 @@ html, body {
 }
 main {
   background-color: #fff;
-  padding: 2em;
+  padding: 1em 3em 2em;
   width: 888px;
   min-height: 100vh;
   margin: 0 auto;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 h3 {
