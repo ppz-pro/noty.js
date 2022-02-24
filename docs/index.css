@@ -21,9 +21,18 @@ li {
 main {
   background-color: #fff;
   padding: 1em 3em 2em;
-  width: 888px;
+  max-width: 888px;
   min-height: 100vh;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+  main {
+    padding: 0 1em 3em;
+  }
 }
 
 header {
