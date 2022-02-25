@@ -10,6 +10,7 @@
 ### 链接
 + [使用文档](https://ppz-pro.github.io/noty.js/docs/)
 + [API & 自定义](https://github.com/ppz-pro/noty.js/blob/main/docs/custom.md)
++ [开发需知](https://github.com/ppz-pro/noty.js/blob/main/docs/dev.md)
 + [问题 & 反馈](https://github.com/ppz-pro/noty.js/issues)
 + [github](https://github.com/ppz-pro/noty.js)
 
