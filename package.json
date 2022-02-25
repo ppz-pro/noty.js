@@ -1,18 +1,15 @@
 {
   "name": "@ppzp/noty",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "简洁、可定制的通知",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ppz-pro/noty.js.git"
   },
-  "keywords": [],
+  "keywords": ["notification", "ppz"],
   "author": "gy",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/ppz-pro/noty.js/issues"
   },
