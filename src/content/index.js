@@ -1,5 +1,5 @@
 // 想用这个 content 的样式，只引用 css 就可以了
-
+import './index.css'
 export default {
   info: createShow('info'),
   success: createShow('success'),

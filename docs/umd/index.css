@@ -1,0 +1,46 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}
+* {
+  box-sizing: border-box;
+}
+
+p {
+  line-height: 1.66em;
+  margin: .4em 0;
+}
+ul {
+  margin: .2em 0;
+}
+li {
+  line-height: 1.66em;
+}
+
+main {
+  background-color: #fff;
+  padding: 1em 3em 2em;
+  max-width: 888px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+  main {
+    padding: 0 1em 3em;
+  }
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h3 {
+  font-size: 1rem;
+}
