@@ -59,7 +59,7 @@ import Content from '@ppzp/noty/content/index.js'
 ## Animation
 最简实践：
 ``` js
-export default {
+const Animation = {
   show(content, root) {
     root.append(content)
   },
@@ -87,7 +87,7 @@ export default {
 ## Content
 最简实践：
 ``` js
-export default {
+const Content = {
   success(text) {
     const div = document.createElement('div')
     div.append('success: ' + text)
@@ -107,7 +107,7 @@ export default {
   }
 }
 ```
-准确地来说，Content 接口是用户定义的  
+准确地来说，Content 接口是**用户定义**的  
 Content 的接口的每一个方法，将成为 Noty 实例的方法  
 例如，对于上面的 Content 接口，将有：
 ``` js

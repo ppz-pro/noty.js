@@ -72,7 +72,7 @@ noty.loading('加载中...') // 默认情况下不会自动关闭</code></pre>
 })</code></pre>
         </section>
 
-        <section class="closable">
+        <section>
           <h3>实践一 异常提示</h3>
           <p>发生异常时，为了不使用户忽略通知，应使通知常驻，并提供关闭按钮，让用户手动关闭通知。</p>
           <pre><code class="language-js">noty.error('出错了', {
@@ -81,7 +81,7 @@ noty.loading('加载中...') // 默认情况下不会自动关闭</code></pre>
 })</code></pre>
         </section>
 
-        <section class="closable">
+        <section>
           <h3>实践二 数据加载</h3>
           <p>数据加载前应通知用户，进入“等待期”；数据加载完成后，再关闭通知，同时提示“加载成功”。</p>
           <pre><code class="language-js">const notyItem = noty.loading('数据加载中') // 加载数据前，显示通知
@@ -91,8 +91,18 @@ ajax.get('/xxx').then(function(res) {
   noty.success('数据加载成功')
 })</code></pre>
         </section>
+
+        <section>
+          <h3>实践三 webpack</h3>
+          <a href="https://github.com/ppz-pro/noty.js/blob/main/docs/webpack-demo">webpack 最简实践</a>
+        </section>
+
+        <section>
+          <h3>定制</h3>
+          <a href="https://github.com/ppz-pro/noty.js/blob/main/docs/custom.md">API & 定制</a>
+        </section>
       </section>
-      <a href="https://github.com/ppz-pro/noty.js/blob/main/docs/custom.md">API & 定制</a>
+
     </main>
 
     <script type="module" src="index.js"></script>

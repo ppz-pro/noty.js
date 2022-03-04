@@ -1,7 +1,8 @@
 import Noty from './noty.js'
-import Animation from './animation/index.js'
-import Content from './content/index.js'
+import CreateAnimation from './animation/index.js'
+import CreateContent from './content/index.js'
 
 export default Noty({
-  Animation, Content
+  Animation: CreateAnimation(),
+  Content: CreateContent()
 })

@@ -1,13 +1,16 @@
 // 想用这个 content 的样式，只引用 css 就可以了
 
-export default {
-  info: createShow('info'),
-  success: createShow('success'),
-  warn: createShow('warn'),
-  error: createShow('error'),
-  loading: createShow('loading', {
-    duration: 0
-  })
+export default
+function CreateContent() {
+  return {
+    info: createShow('info'),
+    success: createShow('success'),
+    warn: createShow('warn'),
+    error: createShow('error'),
+    loading: createShow('loading', {
+      duration: 0
+    })
+  }
 }
 
 function createShow(className, defaults) {

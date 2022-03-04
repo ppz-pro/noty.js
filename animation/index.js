@@ -1,5 +1,5 @@
-export
-function createCCZAnimation({
+export default
+function CreateAnimation({
   duration = 300 // 动画持续时间
 } = {}) {
   const list = [] // 存放所有未关闭的 content（用于区别“关闭后”但动画未结束而滞留在文档流里的 content）
@@ -57,5 +57,3 @@ function createCCZAnimation({
     }
   }
 }
-
-export default createCCZAnimation()
