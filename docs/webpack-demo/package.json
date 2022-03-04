@@ -7,7 +7,6 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
-    "@ppzp/noty": "file:../../ppzp-noty-0.0.3.tgz",
-    "express": "^4.17.3"
+    "@ppzp/noty": "0.0.4"
   }
 }
