@@ -14,7 +14,7 @@ function createShow(className, defaults) {
   return function(text, options = {}) {
     if(defaults)
       Object.assign(options, defaults)
-    if(options.duration != undefined)
+    if(options.duration != void 0)
       this.duration = options.duration
     this.onClose = options.onClose
     
