@@ -55,6 +55,9 @@
   text-align: center;
   
   cursor: pointer;
+  opacity: 0;
+}
+.ppz-noty-item1:hover .close-btn {
   opacity: .5;
 }
 .ppz-noty-item1 .close-btn:hover {

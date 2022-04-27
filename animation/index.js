@@ -13,7 +13,10 @@ function CreateAnimation({
           opacity: 0
         },
         {}
-      ], duration)
+      ], {
+        duration,
+        easing: 'ease'
+      })
     },
     close(content) {
       // FILP 原理 https://aerotwist.com/blog/flip-your-animations/
@@ -36,7 +39,10 @@ function CreateAnimation({
               top: first.top - first.height + 'px', // 往上移一个身位
               opacity: 0 // fadeOut
             }
-          ], duration)
+          ], {
+            duration,
+            easing: 'ease'
+          })
           .onfinish = function() {
             ctt.remove() // 动画结束时，移出文档流
           }
@@ -46,7 +52,10 @@ function CreateAnimation({
           const ani = ctt.animate([
             { top: first.top + 'px' }, // 回到：first
             { top: last.top + 'px' } // 去向：last
-          ], duration)
+          ], {
+            duration,
+            easing: 'ease'
+          })
           ani.onfinish = ani.oncancel = function() {
             ctt.style.position = '' // 立刻回归**真实**位置
           }

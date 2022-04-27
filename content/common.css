@@ -1,5 +1,5 @@
 :root {
-  --ppz-noty-box-shadow: 0 0 .3em rgba(0,0,0,.1);
+  --ppz-noty-box-shadow: 0 0 .3em #77777728;
 }
 
 @keyframes ppz-noty-spin {

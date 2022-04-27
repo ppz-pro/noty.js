@@ -28,11 +28,11 @@ function createShow(className, defaults) {
       </div>`
     )
     div.querySelector('.text').append(text) // 使用 append 方法，省去 escape 操作
-    if(options.closeBtn) {
-      const btn = Div('close-btn', 'x')
-      btn.onclick = this.close
-      div.querySelector('.ppz-noty-item1').prepend(btn)
-    }
+    const btn = Div('close-btn', 'x')
+    btn.onclick = this.close
+    div.querySelector('.ppz-noty-item1').prepend(btn)
+    if(options.closeBtn)
+      btn.style.opacity = .5
     return div
   }
 }
