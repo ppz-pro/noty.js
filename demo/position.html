@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>noty.js custom position</title>
+    <meta charset="utf8">
+    <link href="../content/index.css" rel="stylesheet" type="text/css">
+    <style>
+      .ppz-noty-root {
+        position: fixed;
+        top: 10%;
+        left: 0;
+        right: 0;
+        width: 12em;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>noty.js 自定义位置</h1>
+    <p>顶部居中</p>
+    <button class="info">info</button>
+    <button class="success">success</button>
+    <button class="warn">warn</button>
+    <button class="error">error</button>
+    <button class="loading">loading</button>
+  
+    <script type="module">
+      import Noty from '../noty.js'
+      import CreateAnimation from '../animation/index.js'
+      import CreateContent from '../content/index.js'
+
+      const noty = Noty({
+        customPosition: true,
+        Animation: CreateAnimation(),
+        Content: CreateContent()
+      })
+  
+      el('.success').onclick = function() {
+        noty.success('success')
+      }
+      el('.info').onclick = function() {
+        noty.info('info')
+      }
+      el('.warn').onclick = function() {
+        noty.warn('warn')
+      }
+      el('.error').onclick = function() {
+        noty.error('error')
+      }
+      el('.loading').onclick = function() {
+        noty.loading('loading')
+      }
+  
+      function el(selector) {
+        return document.querySelector(selector)
+      }
+    </script>
+  </body>
+</html>

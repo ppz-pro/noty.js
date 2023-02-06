@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>noty.js default</title>
+    <meta charset="utf8">
+    <link href="../content/index.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1>noty.js default</h1>
+    <button class="info">info</button>
+    <button class="success">success</button>
+    <button class="warn">warn</button>
+    <button class="error">error</button>
+    <button class="loading">loading</button>
+  
+    <script type="module">
+      import noty from '../../index.js'
+  
+      el('.success').onclick = function() {
+        noty.success('success')
+      }
+      el('.info').onclick = function() {
+        noty.info('info')
+      }
+      el('.warn').onclick = function() {
+        noty.warn('warn')
+      }
+      el('.error').onclick = function() {
+        noty.error('error')
+      }
+      el('.loading').onclick = function() {
+        noty.loading('loading')
+      }
+  
+      function el(selector) {
+        return document.querySelector(selector)
+      }
+    </script>
+  </body>
+</html>
