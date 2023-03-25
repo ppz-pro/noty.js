@@ -21,13 +21,16 @@
 
       <section>
         <h2>安装</h2>
+        <h4>通过 npm</h4>
         <pre><code class="language-shell">$ npm install @ppzp/noty</code></pre>
-      </section>
-      
-      <section>
-        <h2>使用</h2>
+        <div>引入</div>
         <pre><code class="language-js">import noty from '@ppzp/noty' // 引入默认配置（动画、内容）的通知
 import '@ppzp/noty/content/index.css' // 引入默认样式</code></pre>
+
+        <h4>通过 CDN</h4>
+        <pre><code><link rel="stylesheet" href="https://unpkg.com/@ppzp/noty.js/content/index.css">
+<script src="https://unpkg.com/@ppzp/noty.js/global.js" type="module"></script></code></pre>
+        <p>通过 CDN 的方式引入后，你可以通过 window.noty 使用 Noty.js 的默认配置</p>
       </section>
       
       <section>
