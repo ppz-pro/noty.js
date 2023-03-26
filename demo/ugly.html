@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>noty.js ugly</title>
+    <meta charset="utf8">
+    <link rel="stylesheet" href="../outofbox/ugly/index.css">
+  </head>
+  <body>
+    <h1>noty.js UGLY</h1>
+    <button class="success">success</button>
+    <button class="warn">warn</button>
+  
+    <script type="module">
+      import noty from '../outofbox/ugly/index.js'
+
+      el('.success').onclick = function() {
+        noty.success('success')
+      }
+      el('.warn').onclick = function() {
+        noty.warn('warn')
+      }
+  
+      function el(selector) {
+        return document.querySelector(selector)
+      }
+    </script>
+  </body>
+</html>

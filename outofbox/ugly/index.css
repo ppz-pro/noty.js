@@ -1,0 +1,33 @@
+.ugly-noty {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  top: 60px;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.ugly-noty > .noty-item {
+  margin-bottom: 1em;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  padding: .8rem 1rem;
+  border-radius: 2px;
+  line-height: 1.2;
+}
+.ugly-noty > .noty-item svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px
+}
+
+.ugly-noty > .success {
+  background: #E9FCE9;
+  color: #1ED21D;
+}
+.ugly-noty > .warn {
+  background: #FDF6EC;
+  color: #E6A23C;
+}
